@@ -3,11 +3,12 @@ The primary goal of this project is to design and implement a Genetic Algorithm 
 
 ## Project Dependencies:
 - Docker
+- csv.h from https://github.com/ben-strasser/fast-cpp-csv-parser.git
 
 ## How to build (try sudo or some form of root access in front of the commands if you need it):
 
 ```bash
-docker build -t ga:v0.0 .
+docker build -t ga:v0.1 .
 ```
 
 ## How to run:
@@ -15,7 +16,7 @@ docker build -t ga:v0.0 .
 For the first time:
 
 ```bash
-docker run -it --name geneticalgo ga:v0.0
+docker run -it --name geneticalgo ga:v0.1
 ```
 
 To run the existing container:
