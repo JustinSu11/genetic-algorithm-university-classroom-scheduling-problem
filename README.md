@@ -1,6 +1,6 @@
-# * Genetic-Algorithm-Classroom-Scheduling *
+# Genetic-Algorithm-Classroom-Scheduling
 
-## ** About This Project: **
+## About This Project:
 The primary goal of this project is to design and implement a Genetic Algorithm (GA) to solve the University Classroom Scheduling Problem using a simplified UniTime-style formulation.
 
 ## Project Dependencies:
@@ -26,9 +26,7 @@ To run the existing container:
 ```bash
 docker start -ia geneticalgo
 ```
-## To clean up:
-
-For cleaning containers:
+## To clean up container:
 
 ```bash
 docker container prune

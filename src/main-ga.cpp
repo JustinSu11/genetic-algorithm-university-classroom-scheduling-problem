@@ -3,8 +3,8 @@
 
 int main(){
 
-std::string file = "rooms_pool.csv";  //csv files
-std::string file2 = "classes_demand.csv";
+std::string file = "../csv-files/rooms_pool.csv";  //csv files
+std::string file2 = "../csv-files/classes_demand.csv";
 std::vector<Room> rooms; //vectors to hold the data from csv files
 std::vector<Class> classes;
 csvparser(file, file2, rooms, classes); //begin parsing
