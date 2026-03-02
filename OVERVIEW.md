@@ -134,7 +134,7 @@ For each day, sort all classes meeting that day by start time. Sum up `enrollmen
 ## Tasks
 
 ### Setup
-- [ ] Read `classes_demand.csv` and `rooms_pool.csv` into structs
+- [x] Read `classes_demand.csv` and `rooms_pool.csv` into structs
 - [ ] Convert days strings to bitmask integers at load time
 - [ ] Build `roomId → index` map (RoomIDs may not be 0-indexed)
 
