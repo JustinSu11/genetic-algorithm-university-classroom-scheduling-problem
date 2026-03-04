@@ -16,5 +16,3 @@ void readClasses(std::vector<Class>& classes) {
                   << ", Days: " << c.days << ", Start Slot: " << c.startSlot << ", Length: " << c.length << std::endl;
     }
 }
-
-

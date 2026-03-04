@@ -1,0 +1,8 @@
++ organizer.h # main header file mainly for organization
++ structs.h   # header to hold structs
++ csv.h       # library header that is used by csvparser.cpp for parsing
+------------------------------------------------------------------------------
++ main-ga.cpp # the main central hub src file
++ csvparser.cpp # src file that parses csvs
++ readcsv.cpp # reads the csv output and displays csv output
++ chromosome.cpp # generating chromosomes and population
