@@ -6,7 +6,7 @@
 struct Class {
     int classId;
     int enrollment;
-    int days;
+    unsigned int days; // string to bitmask that is found in csvparser.cpp
     int startSlot;
     int length;
 };

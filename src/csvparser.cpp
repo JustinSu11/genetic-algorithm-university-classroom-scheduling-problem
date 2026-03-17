@@ -4,7 +4,7 @@
 
 int csvparser(std::string filename, std::string filename2, std::vector<Room> &rooms, std::vector<Class> &classes)
 {
-
+    unsigned int daysbm = 0; // days (bitmask, is unsigned to make it easier)
     // io::CSVREADER<> is a class btw, room and classes are our custom objects
 
     try
@@ -19,7 +19,7 @@ int csvparser(std::string filename, std::string filename2, std::vector<Room> &ro
         int x;
         int y;
 
-        // while reading, print:
+        // while reading:
         while (room.read_row(roomid, capacity, building, x, y))
         {
             Room r;
@@ -31,24 +31,25 @@ int csvparser(std::string filename, std::string filename2, std::vector<Room> &ro
             rooms.push_back(r);
         }
 
-        std::cout << "\n\n\n\n\n";
         // for class demand csv
         // simpler csv reader header cuz just integers in this csv
         io::CSVReader<5> classReader(filename2);
         classReader.read_header(io::ignore_extra_column, "ClassID", "Enrollment", "Days", "StartSlot", "Length");
         int classid;
         int enrollment;
-        int days;
+        std::string days;
         int startslot;
         int length;
 
-        // while reading, print:
+        // while reading:
         while (classReader.read_row(classid, enrollment, days, startslot, length))
         {
             Class c;
             c.classId = classid;
             c.enrollment = enrollment;
-            c.days = days;
+            // conversion to string to unsigned bitmask, also typecasting string to unsigned long to unsigned int
+            daysbm = (unsigned int)std::stoul(days, nullptr, 2);
+            c.days = daysbm;
             c.startSlot = startslot;
             c.length = length;
             classes.push_back(c);
