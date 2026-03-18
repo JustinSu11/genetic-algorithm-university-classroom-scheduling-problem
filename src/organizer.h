@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <cstdlib>
+#include <cmath>
 
 int csvparser(std::string filename, std::string filename2, std::vector<Room>& rooms, std::vector<Class>& classes);
 void readRooms(std::vector<Room>& rooms);
@@ -15,5 +16,20 @@ std::vector<int> generateRandomChromosome(int numClasses, int numRooms);
 
 // Generate a population of random chromosomes
 std::vector<std::vector<int>> generatePopulation(int popSize, int numClasses, int numRooms);
+
+// Compute hard penalty H: room conflicts + capacity violations
+int computeH(const std::vector<int>& phi,
+             const std::vector<Class>& classes,
+             const std::vector<Room>& rooms);
+
+// Compute soft penalty S: per-day sorted travel distance (enrollment * euclidean dist)
+double computeS(const std::vector<int>& phi,
+                const std::vector<Class>& classes,
+                const std::vector<Room>& rooms);
+
+// Compute fitness f = 1 / (1 + wh*H + ws*S)
+double computeFitness(const std::vector<int>& phi,
+                      const std::vector<Class>& classes,
+                      const std::vector<Room>& rooms);
 
 #endif
