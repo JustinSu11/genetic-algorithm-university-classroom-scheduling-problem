@@ -41,7 +41,8 @@ int computeH(const std::vector<int>& phi,
         buckets[phi[i]].push_back(i);
     }
 
-    for (auto& [roomIdx, bucket] : buckets) {
+    for (auto& kv : buckets) {
+        const std::vector<int>& bucket = kv.second;
         int k = (int)bucket.size();
         for (int a = 0; a < k; a++) {
             for (int b = a + 1; b < k; b++) {
