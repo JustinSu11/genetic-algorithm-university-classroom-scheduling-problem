@@ -143,10 +143,10 @@ For each day, sort all classes meeting that day by start time. Sum up `enrollmen
 - [x] Implement `computeH` — capacity violations + room conflict pairs
 - [x] Implement `computeS` — per-day sorted travel distance
 - [x] Implement fitness function `f = 1 / (1 + wh*H + ws*S)`
+- [ ] Implement elitism (copy best into each new generation)
 - [ ] Implement tournament selection (k=5)
 - [ ] Implement one-point crossover
 - [ ] Implement random resetting mutation (pm = 1/N)
-- [ ] Implement elitism (copy best into each new generation)
 - [ ] Wire up the full GA loop (500+ generations, population of 100)
 
 ### Baseline
