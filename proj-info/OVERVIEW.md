@@ -136,13 +136,13 @@ For each day, sort all classes meeting that day by start time. Sum up `enrollmen
 ### Setup
 - [x] Read `classes_demand.csv` and `rooms_pool.csv` into structs
 - [x] Convert days strings to bitmask integers at load time
-- [ ] Build `roomId → index` map (RoomIDs may not be 0-indexed)
+- [x] Build `roomId → index` map (RoomIDs may not be 0-indexed)
 
 ### Core Implementation
 - [x] Implement random chromosome generator (`srand(42)`)
-- [ ] Implement `computeH` — capacity violations + room conflict pairs
-- [ ] Implement `computeS` — per-day sorted travel distance
-- [ ] Implement fitness function `f = 1 / (1 + wh*H + ws*S)`
+- [x] Implement `computeH` — capacity violations + room conflict pairs
+- [x] Implement `computeS` — per-day sorted travel distance
+- [x] Implement fitness function `f = 1 / (1 + wh*H + ws*S)`
 - [ ] Implement tournament selection (k=5)
 - [ ] Implement one-point crossover
 - [ ] Implement random resetting mutation (pm = 1/N)
