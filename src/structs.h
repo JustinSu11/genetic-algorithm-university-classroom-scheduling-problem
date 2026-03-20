@@ -1,6 +1,7 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
+#include <vector>
 #include <string>
 
 struct Class {
@@ -17,6 +18,11 @@ struct Room {
     std::string building;
     int x;
     int y;
+};
+
+struct Chromosome {
+    std::vector<int> chromosome; // room index for each class
+    double fitness;
 };
 
 #endif  // STRUCTS_H
