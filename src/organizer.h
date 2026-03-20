@@ -32,4 +32,10 @@ double computeFitness(const std::vector<int>& phi,
                       const std::vector<Class>& classes,
                       const std::vector<Room>& rooms);
 
+// Tournament selection: pick k random individuals, return index of the best
+// k=5 per spec, but configurable
+int tournamentSelection(const std::vector<std::vector<int>>& population,
+                        const std::vector<double>& fitness,
+                        int k = 5);
+
 #endif
