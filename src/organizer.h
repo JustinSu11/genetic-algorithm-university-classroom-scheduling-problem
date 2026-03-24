@@ -8,8 +8,6 @@
 #include <cmath>
 
 int csvparser(std::string filename, std::string filename2, std::vector<Room>& rooms, std::vector<Class>& classes);
-void readRooms(std::vector<Room>& rooms);
-void readClasses(std::vector<Class>& classes);
 
 // Generate a single random chromosome: phi[i] = room index for class i
 std::vector<int> generateRandomChromosome(int numClasses, int numRooms);
@@ -32,7 +30,7 @@ double computeFitness(const std::vector<int>& phi,
                       const std::vector<Class>& classes,
                       const std::vector<Room>& rooms);
 
-
-void elite(std::vector<ChromosomeStruct> &chromofitness);
+// moving the best chromosomes based on fitness to an elite array to skip tourney
+std::vector<double> elite(std::vector<ChromosomeStruct> &chromofitness);
 
 #endif

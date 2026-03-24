@@ -21,7 +21,13 @@ std::cout << "Generated " << mainpop.size() << " chromosomes, each with " << mai
 std::cout << "Fitness: " << mainpop[0].fitness << ", H= " << computeH(mainpop[0].chromosome, classes, rooms) << std::endl;
 
 //passing vector struct mainpop to elite
-elite(mainpop);
+std::vector<double> elitechromo = elite(mainpop);
+//displaying elite array
+std::cout << "Elite Array:\n";
+for(size_t i = 0; i < elitechromo.size(); i++){
+std::cout << elitechromo[i] << std::endl;
+}
+
 
 return 0;
 }
