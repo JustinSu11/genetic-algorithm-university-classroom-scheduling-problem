@@ -32,4 +32,6 @@ double computeFitness(const std::vector<int>& phi,
                       const std::vector<Class>& classes,
                       const std::vector<Room>& rooms);
 
+void elite(double &chromofitness);
+
 #endif

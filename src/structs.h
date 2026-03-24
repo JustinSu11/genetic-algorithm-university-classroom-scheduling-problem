@@ -20,7 +20,7 @@ struct Room {
     int y;
 };
 
-struct Chromosome {
+struct ChromoStruct {
     std::vector<int> chromosome; // room index for each class
     double fitness;
 };
