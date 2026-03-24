@@ -14,15 +14,15 @@ srand(42);
 int numClasses = classes.size();
 int numRooms = rooms.size();
 int popSize = 100;
+
 // population variable in main
 std::vector<ChromosomeStruct> mainpop = generatePopulation(popSize, numClasses, numRooms, rooms, classes);  
 std::cout << "Generated " << mainpop.size() << " chromosomes, each with " << mainpop[0].chromosome.size() << " genes." << std::endl;
-
 std::cout << "Fitness: " << mainpop[0].fitness << ", H= " << computeH(mainpop[0].chromosome, classes, rooms) << std::endl;
-// passing every fitness into elite
-for(int i = 0; i < mainpop.size(); i++){
-elite(mainpop[i].fitness);
-}
 
+//passing vector struct mainpop to elite
+elite(mainpop);
+
+>>>>>>>
 return 0;
 }

@@ -15,7 +15,7 @@ void readClasses(std::vector<Class>& classes);
 std::vector<int> generateRandomChromosome(int numClasses, int numRooms);
 
 // Generate a population of random chromosomes
-std::vector<Chromosome> generatePopulation(int popSize, int numClasses, int numRooms, const std::vector<Room>& rooms, const std::vector<Class>& classes);
+std::vector<ChromosomeStruct> generatePopulation(int popSize, int numClasses, int numRooms, const std::vector<Room>& rooms, const std::vector<Class>& classes);
 
 // Compute hard penalty H: room conflicts + capacity violations
 int computeH(const std::vector<int>& phi,
@@ -32,6 +32,7 @@ double computeFitness(const std::vector<int>& phi,
                       const std::vector<Class>& classes,
                       const std::vector<Room>& rooms);
 
-void elite(double &chromofitness);
+
+void elite(std::vector<ChromosomeStruct> &chromofitness);
 
 #endif

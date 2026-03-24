@@ -17,9 +17,12 @@ seperate array to hold the elite (vector)
 maybe some other stuff but for now this will do
 
 */ 
-//chromofitness is an alias for mainpop[i].fitness
-void elite(double &chromofitness) {
+//chromofitness[i].fitness is an alias for mainpop[i].fitness
+void elite(std::vector<ChromosomeStruct> &chromofitness) {
 
-
+for(size_t i = 0; i < chromofitness.size(); i++){
+ std::cout << chromofitness[i].fitness << std::endl;
+} 
 
 }
+
