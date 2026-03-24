@@ -23,6 +23,5 @@ std::cout << "Fitness: " << mainpop[0].fitness << ", H= " << computeH(mainpop[0]
 //passing vector struct mainpop to elite
 elite(mainpop);
 
->>>>>>>
 return 0;
 }
