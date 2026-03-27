@@ -15,9 +15,19 @@ int numClasses = classes.size();
 int numRooms = rooms.size();
 int popSize = 100;
 
-std::vector<Chromosome> population = generatePopulation(popSize, numClasses, numRooms, rooms, classes);  
-std::cout << "Generated " << population.size() << " chromosomes, each with " << population[0].chromosome.size() << " genes." << std::endl;
+// population variable in main
+std::vector<ChromosomeStruct> mainpop = generatePopulation(popSize, numClasses, numRooms, rooms, classes);  
+std::cout << "Generated " << mainpop.size() << " chromosomes, each with " << mainpop[0].chromosome.size() << " genes." << std::endl;
+std::cout << "Fitness: " << mainpop[0].fitness << ", H= " << computeH(mainpop[0].chromosome, classes, rooms) << std::endl;
 
-std::cout << "Fitness: " << population[0].fitness << ", H= " << computeH(population[0].chromosome, classes, rooms) << std::endl;
+//passing vector struct mainpop to elite
+std::vector<double> elitechromo = elite(mainpop);
+//displaying elite array
+std::cout << "Elite Array:\n";
+for(size_t i = 0; i < elitechromo.size(); i++){
+std::cout << elitechromo[i] << std::endl;
+}
+
+
 return 0;
 }
