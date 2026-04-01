@@ -145,7 +145,7 @@ For each day, sort all classes meeting that day by start time. Sum up `enrollmen
 - [x] Implement fitness function `f = 1 / (1 + wh*H + ws*S)`
 - [x] Implement elitism (copy best into each new generation)
 - [x] Implement tournament selection (k=5)
-- [ ] Implement one-point crossover
+- [x] Implement one-point crossover
 - [ ] Implement random resetting mutation (pm = 1/N)
 - [ ] Wire up the full GA loop (500+ generations, population of 100)
 
