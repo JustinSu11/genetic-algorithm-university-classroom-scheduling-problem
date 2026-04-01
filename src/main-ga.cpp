@@ -10,7 +10,7 @@ std::vector<Class> classes;
 csvparser(file, file2, rooms, classes); //begin parsing
 
 // Seed RNG and generate initial population
-srand(42);
+srand(time(nullptr));  // Seed random number generator with current time
 int numClasses = classes.size();
 int numRooms = rooms.size();
 int popSize = 100;
@@ -35,13 +35,9 @@ for (int i = 0; i < mainpop.size(); i++) {
 
 // Test tournament selection
 std::cout << "\n--- Testing Tournament Selection ---" << std::endl;
-std::cout << "First 5 fitness scores: ";
-for (int i = 0; i < 5; i++) {
-    std::cout << mainpop[i].fitness << " ";
-}
-std::cout << std::endl;
 
 // Perform 3 tournament selections to demonstrate
+//Uncomment code below to test tournament selection
 for (int t = 0; t < 3; t++) {
     int selectedIdx = tournamentSelection(mainpop, 5);
     std::cout << "Tournament " << (t+1) << " selected index " << selectedIdx 
