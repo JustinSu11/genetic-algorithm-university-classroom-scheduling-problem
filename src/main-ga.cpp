@@ -10,7 +10,7 @@ std::vector<Class> classes;
 csvparser(file, file2, rooms, classes); //begin parsing
 
 // Seed RNG and generate initial population
-srand(42);
+srand(time(nullptr));
 int numClasses = classes.size();
 int numRooms = rooms.size();
 int popSize = 100;
