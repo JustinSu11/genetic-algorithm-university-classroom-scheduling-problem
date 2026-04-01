@@ -49,5 +49,29 @@ for (int t = 0; t < 3; t++) {
               << ", H= " << computeH(mainpop[selectedIdx].chromosome, classes, rooms) << std::endl;
 }
 
+//testing crossover
+// Uncomment the below code to test the crossover function
+// std::cout << "\n--- Testing Crossover ---" << std::endl;
+// ChromosomeStruct parent1 = mainpop[tournamentSelection(mainpop, 5)];
+// ChromosomeStruct parent2 = mainpop[tournamentSelection(mainpop, 5)];
+// ChromosomeStruct child;
+// child.chromosome = crossover(parent1.chromosome, parent2.chromosome);
+// child.fitness = computeFitness(child.chromosome, classes, rooms);
+// std::cout << "Parent 1: " << std::endl;
+// for (int i = 0; i < parent1.chromosome.size(); i++) {
+//     std::cout << parent1.chromosome[i] << " ";
+// }
+// std::cout << std::endl;
+// std::cout << "Parent 2: " << std::endl;
+// for (int i = 0; i < parent2.chromosome.size(); i++) {
+//     std::cout << parent2.chromosome[i] << " ";
+// }
+// std::cout << std::endl;
+// std::cout << "Child: " << std::endl;
+// for (int i = 0; i < child.chromosome.size(); i++) {
+//     std::cout << child.chromosome[i] << " ";
+// }
+// std::cout << std::endl;
+
 return 0;
 }
