@@ -35,8 +35,6 @@ std::vector<double> elite(std::vector<ChromosomeStruct> &chromofitness);
 
 // Tournament selection: pick k random individuals, return index of the best
 // k=5 per spec, but configurable
-int tournamentSelection(const std::vector<std::vector<int>>& population,
-                        const std::vector<double>& fitness,
-                        int k = 5);
+int tournamentSelection(const std::vector<ChromosomeStruct>& population, int k = 5);
 
 #endif

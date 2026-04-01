@@ -8,28 +8,24 @@
 //   2. Return the index of the one with the highest fitness
 //
 // Parameters:
-//   population — the current population of chromosomes
-//   fitness    — precomputed fitness scores (fitness[i] for population[i])
+//   population — alias for mainpop
 //   k          — tournament size (default = 5 per spec)
+//   popSize    — size of the population (default = 100)
 //
 // Returns: index of the selected individual in the population
 // ---------------------------------------------------------------------------
-int tournamentSelection(const std::vector<std::vector<int>>& population,
-                        const std::vector<double>& fitness,
-                        int k)
+int tournamentSelection(const std::vector<ChromosomeStruct>& population, int k)
 {
-    int popSize = (int)population.size();
-    
     // Pick first random individual
-    int bestIdx = rand() % popSize;
-    double bestFit = fitness[bestIdx];
+    int bestIdx = rand() % population.size();
+    double bestFit = population[bestIdx].fitness;
     
     // Pick k-1 more and track the best
     for (int i = 1; i < k; i++) {
-        int idx = rand() % popSize;
-        if (fitness[idx] > bestFit) {
+        int idx = rand() % population.size();
+        if (population[idx].fitness > bestFit) {
             bestIdx = idx;
-            bestFit = fitness[idx];
+            bestFit = population[idx].fitness;
         }
     }
     

@@ -25,11 +25,11 @@ std::vector<double> elitechromo = elite(mainpop);
 //displaying elite array
 std::cout << "Elite Array:\n";
 for(size_t i = 0; i < elitechromo.size(); i++){
-std::cout << elitechromo[i] << std::endl;
+    std::cout << elitechromo[i] << std::endl;
 }
 
 // Compute fitness for all chromosomes
-for (int i = 0; i < popSize; i++) {
+for (int i = 0; i < mainpop.size(); i++) {
     mainpop[i].fitness = computeFitness(mainpop[i].chromosome, classes, rooms);
 }
 
