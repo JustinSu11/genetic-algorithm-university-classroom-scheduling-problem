@@ -6,3 +6,6 @@
 + csvparser.cpp # src file that parses csvs
 + chromosome.cpp # generating chromosomes and population
 + elitism.cpp # finding the largest fitness chromosomes and putting them into a separate array and removing them from the population pool
++ tournament.cpp # tournament src file
++ crossover.cpp # src file to do crossover
+
