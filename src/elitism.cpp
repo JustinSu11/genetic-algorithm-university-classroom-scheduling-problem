@@ -9,7 +9,7 @@ std::vector<double> elite(std::vector<ChromosomeStruct> &chromofitness) {
 while(count < numofelite){  // run for loop # of times depending on numofelite
  double largest = chromofitness[0].fitness;
  int index = 0;
-for(size_t i = 0 + 1; i < chromofitness.size(); i++){
+for(int i = 0 + 1; i < chromofitness.size(); i++){
  if(largest < chromofitness[i].fitness){
     largest = chromofitness[i].fitness;  // largest comparison
     index = i; 

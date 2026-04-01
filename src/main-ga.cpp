@@ -25,9 +25,29 @@ std::vector<double> elitechromo = elite(mainpop);
 //displaying elite array
 std::cout << "Elite Array:\n";
 for(size_t i = 0; i < elitechromo.size(); i++){
-std::cout << elitechromo[i] << std::endl;
+    std::cout << elitechromo[i] << std::endl;
 }
 
+// Compute fitness for all chromosomes
+for (int i = 0; i < mainpop.size(); i++) {
+    mainpop[i].fitness = computeFitness(mainpop[i].chromosome, classes, rooms);
+}
+
+// Test tournament selection
+std::cout << "\n--- Testing Tournament Selection ---" << std::endl;
+std::cout << "First 5 fitness scores: ";
+for (int i = 0; i < 5; i++) {
+    std::cout << mainpop[i].fitness << " ";
+}
+std::cout << std::endl;
+
+// Perform 3 tournament selections to demonstrate
+for (int t = 0; t < 3; t++) {
+    int selectedIdx = tournamentSelection(mainpop, 5);
+    std::cout << "Tournament " << (t+1) << " selected index " << selectedIdx 
+              << " with fitness " << mainpop[selectedIdx].fitness 
+              << ", H= " << computeH(mainpop[selectedIdx].chromosome, classes, rooms) << std::endl;
+}
 
 return 0;
 }
