@@ -37,4 +37,7 @@ std::vector<double> elite(std::vector<ChromosomeStruct> &chromofitness);
 // k=5 per spec, but configurable
 int tournamentSelection(const std::vector<ChromosomeStruct>& population, int k = 5);
 
+// one-point crossover
+std::vector<int> crossover(const std::vector<int> parent1, const std::vector<int> parent2);
+
 #endif
