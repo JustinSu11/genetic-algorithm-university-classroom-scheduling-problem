@@ -6,6 +6,7 @@
 #include <string>
 #include <cstdlib>
 #include <cmath>
+#include <utility>
 
 int csvparser(std::string filename, std::string filename2, std::vector<Room>& rooms, std::vector<Class>& classes);
 
@@ -38,6 +39,6 @@ std::vector<double> elite(std::vector<ChromosomeStruct> &chromofitness);
 int tournamentSelection(const std::vector<ChromosomeStruct>& population, int k = 5);
 
 // one-point crossover
-std::vector<int> crossover(const std::vector<int> parent1, const std::vector<int> parent2);
+std::pair<std::vector<int>, std::vector<int>> crossover(const std::vector<int> parent1, const std::vector<int> parent2);
 
 #endif

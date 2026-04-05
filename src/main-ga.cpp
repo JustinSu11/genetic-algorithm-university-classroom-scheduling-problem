@@ -50,9 +50,10 @@ for (int t = 0; t < 3; t++) {
 // std::cout << "\n--- Testing Crossover ---" << std::endl;
 // ChromosomeStruct parent1 = mainpop[tournamentSelection(mainpop, 5)];
 // ChromosomeStruct parent2 = mainpop[tournamentSelection(mainpop, 5)];
-// ChromosomeStruct child;
-// child.chromosome = crossover(parent1.chromosome, parent2.chromosome);
-// child.fitness = computeFitness(child.chromosome, classes, rooms);
+// ChromosomeStruct child1, child2;
+// std::tie(child1.chromosome, child2.chromosome) = crossover(parent1.chromosome, parent2.chromosome);
+// child1.fitness = computeFitness(child1.chromosome, classes, rooms);
+// child2.fitness = computeFitness(child2.chromosome, classes, rooms);
 // std::cout << "Parent 1: " << std::endl;
 // for (int i = 0; i < parent1.chromosome.size(); i++) {
 //     std::cout << parent1.chromosome[i] << " ";
@@ -63,9 +64,14 @@ for (int t = 0; t < 3; t++) {
 //     std::cout << parent2.chromosome[i] << " ";
 // }
 // std::cout << std::endl;
-// std::cout << "Child: " << std::endl;
-// for (int i = 0; i < child.chromosome.size(); i++) {
-//     std::cout << child.chromosome[i] << " ";
+// std::cout << "Child1: " << std::endl;
+// for (int i = 0; i < child1.chromosome.size(); i++) {
+//     std::cout << child1.chromosome[i] << " ";
+// }
+// std::cout << std::endl;
+// std::cout << "Child2: " << std::endl;
+// for (int i = 0; i < child2.chromosome.size(); i++) {
+//     std::cout << child2.chromosome[i] << " ";
 // }
 // std::cout << std::endl;
 
