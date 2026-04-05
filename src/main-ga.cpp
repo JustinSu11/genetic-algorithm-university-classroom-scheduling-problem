@@ -28,11 +28,6 @@ for(size_t i = 0; i < elitechromo.size(); i++){
     std::cout << elitechromo[i] << std::endl;
 }
 
-// Compute fitness for all chromosomes
-for (int i = 0; i < mainpop.size(); i++) {
-    mainpop[i].fitness = computeFitness(mainpop[i].chromosome, classes, rooms);
-}
-
 // Test tournament selection
 std::cout << "\n--- Testing Tournament Selection ---" << std::endl;
 
