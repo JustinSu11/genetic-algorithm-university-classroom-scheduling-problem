@@ -32,7 +32,7 @@ double computeFitness(const std::vector<int>& phi,
                       const std::vector<Room>& rooms);
 
 // moving the best chromosomes based on fitness to an elite array to skip tourney
-std::vector<double> elite(std::vector<ChromosomeStruct> &chromofitness);
+std::vector<ChromosomeStruct> elite(std::vector<ChromosomeStruct> &chromofitness);
 
 // Tournament selection: pick k random individuals, return index of the best
 // k=5 per spec, but configurable
