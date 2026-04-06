@@ -26,4 +26,9 @@ struct ChromosomeStruct {
     double fitness;
 };
 
+struct Children {
+std::vector<int> child1; //struct so i can return child1 and child2 in crossover.cpp
+std::vector<int> child2;
+};
+
 #endif  // STRUCTS_H

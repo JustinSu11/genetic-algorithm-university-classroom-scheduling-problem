@@ -39,6 +39,6 @@ std::vector<double> elite(std::vector<ChromosomeStruct> &chromofitness);
 int tournamentSelection(const std::vector<ChromosomeStruct>& population, int k = 5);
 
 // one-point crossover
-std::pair<std::vector<int>, std::vector<int>> crossover(const std::vector<int> parent1, const std::vector<int> parent2);
+Children crossover(const std::vector<int> &parent1, const std::vector<int> &parent2);
 
 #endif

@@ -42,33 +42,37 @@ for (int t = 0; t < 3; t++) {
 
 //testing crossover
 // Uncomment the below code to test the crossover function
-// std::cout << "\n--- Testing Crossover ---" << std::endl;
-// ChromosomeStruct parent1 = mainpop[tournamentSelection(mainpop, 5)];
-// ChromosomeStruct parent2 = mainpop[tournamentSelection(mainpop, 5)];
-// ChromosomeStruct child1, child2;
-// std::tie(child1.chromosome, child2.chromosome) = crossover(parent1.chromosome, parent2.chromosome);
-// child1.fitness = computeFitness(child1.chromosome, classes, rooms);
-// child2.fitness = computeFitness(child2.chromosome, classes, rooms);
-// std::cout << "Parent 1: " << std::endl;
-// for (int i = 0; i < parent1.chromosome.size(); i++) {
-//     std::cout << parent1.chromosome[i] << " ";
-// }
-// std::cout << std::endl;
-// std::cout << "Parent 2: " << std::endl;
-// for (int i = 0; i < parent2.chromosome.size(); i++) {
-//     std::cout << parent2.chromosome[i] << " ";
-// }
-// std::cout << std::endl;
-// std::cout << "Child1: " << std::endl;
-// for (int i = 0; i < child1.chromosome.size(); i++) {
-//     std::cout << child1.chromosome[i] << " ";
-// }
-// std::cout << std::endl;
-// std::cout << "Child2: " << std::endl;
-// for (int i = 0; i < child2.chromosome.size(); i++) {
-//     std::cout << child2.chromosome[i] << " ";
-// }
-// std::cout << std::endl;
+ std::cout << "\n--- Testing Crossover ---" << std::endl;
+ ChromosomeStruct parent1 = mainpop[tournamentSelection(mainpop, 5)];
+ ChromosomeStruct parent2 = mainpop[tournamentSelection(mainpop, 5)];
+ ChromosomeStruct child1, child2;
+ Children youngsters = crossover(parent1.chromosome, parent2.chromosome);
+ child1.chromosome = youngsters.child1;  // copy youngster struct and map it to the child1 and child2 struct that was made above
+ child2.chromosome = youngsters.child2;
+ child1.fitness = computeFitness(child1.chromosome, classes, rooms);
+ child2.fitness = computeFitness(child2.chromosome, classes, rooms);
+/*
+ std::cout << "Parent 1: " << std::endl;
+ for (int i = 0; i < parent1.chromosome.size(); i++) {
+     std::cout << parent1.chromosome[i] << " ";
+ }
+ std::cout << std::endl;
+ std::cout << "Parent 2: " << std::endl;
+ for (int i = 0; i < parent2.chromosome.size(); i++) {
+     std::cout << parent2.chromosome[i] << " ";
+ }
+ std::cout << std::endl;
+ std::cout << "Child1: " << std::endl;
+ for (int i = 0; i < child1.chromosome.size(); i++) {
+     std::cout << child1.chromosome[i] << " ";
+ }
+ std::cout << std::endl;
+ std::cout << "Child2: " << std::endl;
+ for (int i = 0; i < child2.chromosome.size(); i++) {
+     std::cout << child2.chromosome[i] << " ";
+}
+std::cout << std::endl;
+*/
 
 return 0;
 }
