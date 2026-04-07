@@ -41,4 +41,7 @@ int tournamentSelection(const std::vector<ChromosomeStruct>& population, int k =
 // one-point crossover
 Children crossover(const std::vector<int> &parent1, const std::vector<int> &parent2);
 
+// mutation
+std::vector<int> mutate(const std::vector<int> &chromosome, int numRooms);
+
 #endif

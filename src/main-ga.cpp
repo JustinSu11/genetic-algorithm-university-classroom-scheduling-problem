@@ -10,7 +10,7 @@ std::vector<Class> classes;
 csvparser(file, file2, rooms, classes); //begin parsing
 
 // Seed RNG and generate initial population
-srand(time(nullptr));  // Seed random number generator with current time
+srand(42);  // Seed random number generator with current time
 int numClasses = classes.size();
 int numRooms = rooms.size();
 int popSize = 100;
@@ -43,6 +43,8 @@ ChromosomeStruct child1, child2;
 Children youngsters = crossover(parent1.chromosome, parent2.chromosome); //crossover happens here
 child1.chromosome = youngsters.child1;  // copy youngster struct and map it to the child1 and child2 struct that was made above
 child2.chromosome = youngsters.child2;
+child1.chromosome = mutate(child1.chromosome, numRooms); //mutate child1
+child2.chromosome = mutate(child2.chromosome, numRooms); //mutate child2
 child1.fitness = computeFitness(child1.chromosome, classes, rooms);  // compute fitness for child1 and child2
 child2.fitness = computeFitness(child2.chromosome, classes, rooms);
 genchild.push_back(child1);
