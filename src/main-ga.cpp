@@ -53,12 +53,8 @@ genchild.push_back(child2); // adding both childs into the array
  mainpop = genchild; //cycle out the old population with the one collected from genchild vector
  GenerationalRun.push_back(mainpop); //add current iteration of mainpop into the generation pool
 }
-ChromosomeStruct randomChromosome = GenerationalRun[rand() % GenerationalRun.size()][rand() % GenerationalRun[0].size()];
-std::cout << "random chromosome from GenerationalRun: " << std::endl;
-for (int i = 0; i < randomChromosome.chromosome.size(); i++) {
-    std::cout << randomChromosome.chromosome[i] << " ";
-}
-std::cout << std::endl;
+exportSchedule(GenerationalRun, classes, rooms);
+exportConvergence(GenerationalRun);
 
 
 return 0;
