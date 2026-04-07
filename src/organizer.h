@@ -6,7 +6,6 @@
 #include <string>
 #include <cstdlib>
 #include <cmath>
-#include <utility>
 
 int csvparser(std::string filename, std::string filename2, std::vector<Room>& rooms, std::vector<Class>& classes);
 
