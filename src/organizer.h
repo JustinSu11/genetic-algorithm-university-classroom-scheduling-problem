@@ -6,6 +6,7 @@
 #include <string>
 #include <cstdlib>
 #include <cmath>
+#include <iomanip> //used for setprecision in exporter.cpp
 
 int csvparser(std::string filename, std::string filename2, std::vector<Room>& rooms, std::vector<Class>& classes);
 
@@ -42,5 +43,13 @@ Children crossover(const std::vector<int> &parent1, const std::vector<int> &pare
 
 // mutation
 std::vector<int> mutate(const std::vector<int> &chromosome, int numRooms);
+
+// Export best schedule to schedule_output.csv
+void exportSchedule(const std::vector<std::vector<ChromosomeStruct>>& GenerationalRun,
+                    const std::vector<Class>& classes,
+                    const std::vector<Room>& rooms);
+
+// Export per-generation best + avg fitness to convergence.csv
+void exportConvergence(const std::vector<std::vector<ChromosomeStruct>>& GenerationalRun);
 
 #endif
