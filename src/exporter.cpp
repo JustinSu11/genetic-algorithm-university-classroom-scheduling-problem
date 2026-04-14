@@ -29,9 +29,16 @@ void exportSchedule(const std::vector<std::vector<ChromosomeStruct>>& Generation
             return a.fitness < b.fitness;
         });
     const ChromosomeStruct& best = *bestIt;
+    std::ostringstream oss;
+    oss << std::setprecision(14) << best.fitness;
+    std::string fitnessStr = oss.str();
+    oss.str("");
+    oss.clear();
+    oss << std::setprecision(14) << best.H;
+    std::string HStr = oss.str();
 
     std::ofstream file("schedule_output.csv");
-    file << "ClassID,Enrollment,Days,StartSlot,Length,RoomID,Building,RoomCapacity,CapacityMet,Fitness\n";
+    file << "ClassID,Enrollment,Days,StartSlot,Length,RoomID,Building,RoomCapacity,CapacityMet,Fitness, H\n";
 
     for (int i = 0; i < (int)best.chromosome.size(); i++) {
         int roomIdx = best.chromosome[i];
@@ -47,7 +54,8 @@ void exportSchedule(const std::vector<std::vector<ChromosomeStruct>>& Generation
              << "\"" << r.building << "\"" << ","
              << r.capacity << ","
              << (r.capacity >= c.enrollment ? "Yes" : "No") << ","
-             << (i == 0 ? std::to_string(best.fitness) : "") << "\n";
+             << (i == 0 ? fitnessStr : "") << ","
+             << (i == 0 ? HStr : "") << "\n";
     }
     file.close();
     std::cout << "Exported schedule_output.csv (" << best.chromosome.size() << " classes, fitness=" << best.fitness << ")\n";
@@ -65,7 +73,7 @@ void exportConvergence(const std::vector<std::vector<ChromosomeStruct>>& Generat
             if (c.fitness > best) best = c.fitness;
         }
         double avg = sum / GenerationalRun[g].size();
-        file << g << "," << best << "," << avg << "\n";
+        file << g + 1 << "," << best << "," << avg << "\n";
     }
     file.close();
     std::cout << "Exported convergence.csv (" << GenerationalRun.size() << " generations)\n";
