@@ -8,4 +8,6 @@
 + elitism.cpp # finding the largest fitness chromosomes and putting them into a separate array and removing them from the population pool
 + tournament.cpp # tournament src file
 + crossover.cpp # src file to do crossover
++ exporter.cpp # src file to export the generation findings to csv
++ mutate.cpp # src file that allows for mutation for the generation loop
 

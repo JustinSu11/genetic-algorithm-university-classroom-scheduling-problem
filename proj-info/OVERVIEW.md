@@ -146,8 +146,8 @@ For each day, sort all classes meeting that day by start time. Sum up `enrollmen
 - [x] Implement elitism (copy best into each new generation)
 - [x] Implement tournament selection (k=5)
 - [x] Implement one-point crossover
-- [ ] Implement random resetting mutation (pm = 1/N)
-- [ ] Wire up the full GA loop (500+ generations, population of 100)
+- [x] Implement random resetting mutation (pm = 1/N)
+- [x] Wire up the full GA loop (500+ generations, population of 100)
 
 ### Baseline
 - [ ] Implement random baseline — generate 100 random chromosomes, return the best
