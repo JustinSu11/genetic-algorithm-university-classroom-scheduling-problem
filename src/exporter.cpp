@@ -58,7 +58,7 @@ void exportSchedule(const std::vector<std::vector<ChromosomeStruct>>& Generation
              << (i == 0 ? HStr : "") << "\n";
     }
     file.close();
-    std::cout << "Exported schedule_output.csv (" << best.chromosome.size() << " classes, fitness=" << best.fitness << ")\n";
+    std::cout << "Exported schedule_output.csv (" << best.chromosome.size() << " classes, fitness=" << best.fitness << ", H=" << best.H << ")\n";
 }
 
 // Writes best and average fitness per generation to convergence.csv
