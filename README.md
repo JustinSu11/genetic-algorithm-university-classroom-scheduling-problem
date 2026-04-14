@@ -10,7 +10,7 @@ The primary goal of this project is to design and implement a Genetic Algorithm 
 ## How to build (try sudo or some form of root access in front of the commands if you need it):
 
 ```bash
-docker build -t ga:v0.8 .
+docker build -t ga:v1 .
 ```
 
 ## How to run:
@@ -18,7 +18,7 @@ docker build -t ga:v0.8 .
 For the first time:
 
 ```bash
-docker run -it --name geneticalgo ga:v0.8
+docker run -it --name geneticalgo ga:v1
 ```
 
 To run the existing container:
