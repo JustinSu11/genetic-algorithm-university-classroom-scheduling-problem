@@ -45,8 +45,8 @@ child1.chromosome = youngsters.child1;  // copy youngster struct and map it to t
 child2.chromosome = youngsters.child2;
 child1.chromosome = mutate(child1.chromosome, numRooms); //mutate child1
 child2.chromosome = mutate(child2.chromosome, numRooms); //mutate child2
-child1.fitness = computeFitness(child1.chromosome, classes, rooms);  // compute fitness for child1 and child2
-child2.fitness = computeFitness(child2.chromosome, classes, rooms);
+child1.fitness = computeFitness(child1, classes, rooms);  // compute fitness for child1 and child2
+child2.fitness = computeFitness(child2, classes, rooms);
 genchild.push_back(child1);
 genchild.push_back(child2); // adding both childs into the array 
 }

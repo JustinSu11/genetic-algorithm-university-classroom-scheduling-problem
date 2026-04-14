@@ -24,7 +24,8 @@ struct ChromosomeStruct {
 
     std::vector<int> chromosome; // room index for each class
     double fitness;
-    double H; // hard penalty
+    int H; // hard penalty
+    double S; // soft penalty
 };
 
 struct Children {

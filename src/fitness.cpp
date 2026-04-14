@@ -126,11 +126,14 @@ double computeS(const std::vector<int>& phi,
 // ---------------------------------------------------------------------------
 // computeFitness  f = 1 / (1 + wh*H + ws*S)
 // ---------------------------------------------------------------------------
-double computeFitness(const std::vector<int>& phi,
+double computeFitness(ChromosomeStruct& cs,
                       const std::vector<Class>& classes,
                       const std::vector<Room>& rooms)
 {
-    int    H = computeH(phi, classes, rooms);
-    double S = computeS(phi, classes, rooms);
-    return 1.0 / (1.0 + WH * H + WS * S);
+    int    H = computeH(cs.chromosome, classes, rooms);
+    double S = computeS(cs.chromosome, classes, rooms);
+    cs.H = H;
+    cs.S = S;
+    cs.fitness = 1.0 / (1.0 + WH * H + WS * S);
+    return cs.fitness;
 }

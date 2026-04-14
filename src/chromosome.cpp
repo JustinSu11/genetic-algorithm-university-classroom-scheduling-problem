@@ -13,7 +13,7 @@ std::vector<ChromosomeStruct> generatePopulation(int popSize, int numClasses, in
     std::vector<ChromosomeStruct> population(popSize);
     for (int i = 0; i < popSize; i++) {
         population[i].chromosome = generateRandomChromosome(numClasses, numRooms);    // <-
-        population[i].fitness = computeFitness(population[i].chromosome, classes, rooms);  // <- assign fitness to the chromosomes in the population
+        population[i].fitness = computeFitness(population[i], classes, rooms);  // <- assign fitness to the chromosomes in the population
     }
     return population;
 }

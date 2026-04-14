@@ -64,16 +64,23 @@ void exportSchedule(const std::vector<std::vector<ChromosomeStruct>>& Generation
 // Writes best and average fitness per generation to convergence.csv
 void exportConvergence(const std::vector<std::vector<ChromosomeStruct>>& GenerationalRun) {
     std::ofstream file("convergence.csv");
-    file << "Generation,BestFitness,AvgFitness\n";
+    file << "Generation,BestFitness,AvgFitness,bestH,AvgH,bestS,AvgS\n";
 
     for (int g = 0; g < (int)GenerationalRun.size(); g++) {
-        double best = 0.0, sum = 0.0;
+        double best = 0.0, fitnessSum = 0.0, S = std::numeric_limits<double>::max(), Hsum = 0.0, Ssum = 0.0;
+        int H = 10000;
         for (const auto& c : GenerationalRun[g]) {
-            sum += c.fitness;
+            fitnessSum += c.fitness;
+            Hsum += c.H;
+            Ssum += c.S;
             if (c.fitness > best) best = c.fitness;
+            if (c.H < H) H = c.H;
+            if (c.S < S) S = c.S;
         }
-        double avg = sum / GenerationalRun[g].size();
-        file << g + 1 << "," << best << "," << avg << "\n";
+        double fitnessAvg = fitnessSum / GenerationalRun[g].size();
+        double Havg = Hsum / GenerationalRun[g].size();
+        double Savg = Ssum / GenerationalRun[g].size();
+        file << g + 1 << "," << best << "," << fitnessAvg << "," << H << "," << Havg << "," << S << "," << Savg << "\n";
     }
     file.close();
     std::cout << "Exported convergence.csv (" << GenerationalRun.size() << " generations)\n";

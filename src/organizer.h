@@ -27,7 +27,7 @@ double computeS(const std::vector<int>& phi,
                 const std::vector<Room>& rooms);
 
 // Compute fitness f = 1 / (1 + wh*H + ws*S)
-double computeFitness(const std::vector<int>& phi,
+double computeFitness(ChromosomeStruct& cs,
                       const std::vector<Class>& classes,
                       const std::vector<Room>& rooms);
 
